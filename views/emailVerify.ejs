@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .success_img {
+            width: 100px;
+            margin: 20px 0;
+        }
+        .green_btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .green_btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <% if (locals.success) { %>
+    <div class="container">
+        <img src="../public/images/success.png" alt="success_img" class="success_img" />
+        <h1>Email verified successfully</h1>
+        <a href="/signin">
+            <button class="green_btn">Login</button>
+        </a>
+    </div>
+    <% } else { %>
+    <h1>404 Not Found</h1>
+    <% } %>
+</body>
+</html>

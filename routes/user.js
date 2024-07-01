@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { handleSignup, handlesignin, handleLogout } = require("../controller/user");
+const { handleSignup, handlesignin, handleLogout, handleVerifyEmail } = require("../controller/user");
 const router = Router();
 
 router.get("/signin",(req,res)=>{
@@ -11,6 +11,6 @@ router.get("/signup",(req,res)=>{
 router.get("/logout",handleLogout);
 router.post("/signup",handleSignup);
 router.post("/signin",handlesignin);
-
+router.get("/:id/verify/:token/",handleVerifyEmail);
 
 module.exports = router;
